@@ -5,11 +5,11 @@
 #include "additional_functions.h"
 
 void Calculator::run() {
-    std::string operation;
-    double num1, num2;
-    std::cout << "Welcome to the Crazy Calculator!" << std::endl;
-
+    std::cout << "Welcome to the Scientific Calculator!  :) " << std::endl;
     while (true) {
+        std::string operation;
+        double num1, num2;
+
         std::cout << "Choose an operation:" << std::endl;
         std::cout << "1. Addition" << std::endl;
         std::cout << "2. Subtraction" << std::endl;
@@ -52,9 +52,6 @@ void Calculator::run() {
             std::cout << "Enter a number: ";
             std::cin >> num1;
         }
-
-        // Clear the input stream
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         double result;
         switch (choice) {
@@ -123,5 +120,14 @@ void Calculator::run() {
         }
 
         std::cout << "Result: " << result << std::endl;
+
+        char choice_continue;
+        std::cout << "Do you want to continue (y/n)? ";
+        std::cin >> choice_continue;
+
+        if (choice_continue != 'y' && choice_continue != 'Y') {
+            std::cout << "Goodbye!" << std::endl;
+            break;
+        }
     }
 }
